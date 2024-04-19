@@ -22,33 +22,6 @@ Para compilar el programa, puedes usar el siguiente comando en tu terminal:
 g++ -o matriz_reader main.cpp
 ```
 
-A continuación, te proporciono un archivo `README.md` adecuado para documentar el programa que has desarrollado en C++. Este archivo explica de manera clara y concisa cómo compilar y ejecutar el programa, así como los detalles del formato de entrada esperado para la matriz.
-
-```markdown
-# Matriz Reader en C++
-
-Este programa en C++ permite leer una matriz del usuario en un formato similar al usado en MATLAB, donde las filas están separadas por punto y coma (`;`) y los elementos de cada fila están separados por espacios. Luego, imprime la matriz ingresada en la consola.
-
-## Características
-
-- **Entrada Flexible:** El usuario puede ingresar matrices de cualquier tamaño, siempre que sigan el formato correcto.
-- **Formato MATLAB-Like:** Las matrices deben ingresarse en una línea, usando `;` para separar filas.
-
-## Requisitos
-
-Para compilar y ejecutar este programa, necesitarás:
-
-- Un compilador de C++ que soporte C++11 o superior (como g++).
-- Acceso a una terminal o línea de comandos.
-
-## Compilación
-
-Para compilar el programa, puedes usar el siguiente comando en tu terminal:
-
-```bash
-g++ -o matriz_reader main.cpp
-```
-
 Esto compilará `main.cpp` y generará un ejecutable llamado `matriz_reader`.
 
 ### Ejecución

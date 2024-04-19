@@ -1,4 +1,6 @@
-## Matriz Reader en C++
+# Test de Matrices
+
+## Carpeta Read
 
 Este programa en C++ permite leer una matriz del usuario en un formato similar al usado en MATLAB, donde las filas están separadas por punto y coma (`;`) y los elementos de cada fila están separados por espacios. Luego, imprime la matriz ingresada en la consola.
 
@@ -48,6 +50,7 @@ La matriz ingresada es:
 4 5 6 
 7 8 9 
 ```
+--
 
 ### Licencia
 

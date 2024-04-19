@@ -1,8 +1,10 @@
-# 👾 | Test de Matrices 
+# 👾 | Test de Matrices
+
+---
+
+## 📁 | Carpeta Read
 
 Este programa en C++ permite leer una matriz del usuario en un formato similar al usado en MATLAB, donde las filas están separadas por punto y coma (`;`) y los elementos de cada fila están separados por espacios. Luego, imprime la matriz ingresada en la consola.
-
-## 📁 | Carpeta Read 
 
 ### Características
 
@@ -46,15 +48,18 @@ Dado el ejemplo de entrada anterior, la salida del programa será:
 
 ```
 La matriz ingresada es:
-1 2 3 
-4 5 6 
-7 8 9 
+1 2 3
+4 5 6
+7 8 9
 ```
 
 ---
+
 ### 📁 | Carpeta Inversa
 
-### Características
+Este programa en C++ permite leer una matriz del usuario en un formato similar al utilizado en MATLAB, donde las filas están separadas por punto y coma (;) y los elementos de cada fila están separados por espacios. Si el usuario lo desea, el programa calcula y muestra la inversa de esta matriz.
+
+s### Características
 
 - **Entrada Flexible:** El usuario puede ingresar matrices de cualquier tamaño que sigan el formato correcto.
 - **Formato MATLAB-Like:** Las matrices deben ingresarse en una línea, usando `;` para separar filas.
@@ -116,7 +121,10 @@ La matriz no es invertible (determinante es cero).
 ```
 
 ---
+
 ### 📁 | Carpeta Producto
+
+Este programa en C++ permite leer dos matrices del usuario en un formato similar al usado en MATLAB, donde las filas están separadas por punto y coma (;) y los elementos de cada fila están separados por espacios. Luego, si el usuario lo desea, calcula y muestra el producto de estas matrices.
 
 ### Características
 
@@ -175,7 +183,11 @@ Error: las dimensiones de las matrices no permiten el producto.
 ```
 
 ---
-### 📁 | Carpeta Todo
+
+### 📁 | Carpeta Compleja
+
+Este programa en C++ permite leer dos matrices del usuario en un formato similar al utilizado en MATLAB, donde las filas están separadas por punto y coma (;) y los elementos de cada fila están separados por espacios. Posteriormente, ofrece la opción de calcular y mostrar el producto de estas matrices y/o la inversa de la primera matriz, si el usuario así lo desea.
+
 
 ### Características
 
@@ -244,6 +256,92 @@ La matriz no es invertible (determinante es cero).
 ```
 
 ---
+
+### 📁 | Carpeta Estadísticas
+
+Este programa en C++ está diseñado para evaluar el rendimiento de operaciones matemáticas como el producto de matrices y la inversa de matrices. Permite al usuario especificar cuántas operaciones realizar y si desea calcular el producto, la inversa, o ambos, usando matrices generadas aleatoriamente.
+
+### Características
+
+- **Generación Automática de Matrices:** Crea matrices aleatorias para las operaciones especificadas, asegurando una amplia variabilidad en los casos de prueba.
+- **Operaciones Diversificadas:** Permite al usuario optar por calcular el producto, la inversa, o ambos para las matrices generadas.
+- **Reporte Detallado:** Proporciona información detallada sobre cada matriz y resultado, incluyendo tiempos de ejecución para cada operación individual y un resumen del tiempo total.
+
+### Requisitos
+
+Para compilar y ejecutar este programa, necesitarás:
+
+- **Compilador C++:** Un compilador que soporte C++11 o superior (como g++).
+- **Biblioteca Eigen:** Utilizada para operaciones de matrices. Asegúrate de tenerla instalada y correctamente configurada en tu entorno de desarrollo.
+- **Librería `<chrono>`:** Para medición de tiempos de ejecución.
+- **Librería `<random>`:** Para la generación de matrices aleatorias.
+
+### Compilación
+
+El programa debe compilarse con acceso a la biblioteca Eigen. Aquí te dejo el comando típico de compilación que puedes usar en una terminal:
+
+```bash
+g++ -o matriz_estadisticas main.cpp -I /path/to/eigen
+```
+
+Reemplaza `/path/to/eigen` con la ruta actual al directorio que contiene los headers de Eigen en tu sistema.
+
+### Ejecución
+
+Para ejecutar el programa, utiliza el siguiente comando en la terminal:
+
+```bash
+./matriz_estadisticas
+```
+
+Este comando inicia el programa, que luego te pedirá que ingreses los datos necesarios para proceder con las operaciones matemáticas.
+
+### Cómo Usar el Programa
+
+1. **Número de Operaciones:**
+   - Ingresa el número total de operaciones que deseas realizar.
+
+2. **Tipo de Operación:**
+   - Especifica el tipo de operación: `producto`, `inversa`, o `ambas`.
+
+### Ejemplo de Entrada
+
+```plaintext
+Ingrese cuántas operaciones desea realizar: 10
+¿Desea calcular 'producto', 'inversa' o 'ambas'? ambas
+```
+
+### Ejemplo de Salida
+
+La salida incluirá las matrices utilizadas, sus productos o inversas, y los tiempos de cálculo:
+
+```plaintext
+Matriz A (1):
+[1.23456789012345e+000, 2.34567890123456e+000, 3.45678901234567e+000;
+ 4.56789012345678e+000, 5.67890123456789e+000, 6.78901234567890e+000;
+ 7.89012345678901e+000, 8.90123456789012e+000, 9.01234567890123e+000]
+
+Producto (1):
+[3.00000000000000e+001, 2.40000000000000e+001, 1.80000000000000e+001;
+ 8.40000000000000e+001, 6.90000000000000e+001, 5.40000000000000e+001;
+ 1.38000000000000e+002, 1.14000000000000e+002, 9.00000000000000e+001]
+
+Tiempo para el producto: 123456 microsegundos.
+
+Inversa (1):
+[-3.00000000000000e+001, 6.00000000000000e+001, -3.00000000000000e+001;
+ 6.00000000000000e+001, -1.20000000000000e+002, 6.00000000000000e+001;
+ -3.00000000000000e+001, 6.00000000000000e
+
++001, -3.00000000000000e+001]
+
+Tiempo para la inversa: 654321 microsegundos.
+
+Tiempo total para 10 operaciones de 'ambas': 20 segundos.
+```
+
+---
+
 ### 🗳️ | Licencia
 
 Este proyecto está bajo la Licencia MIT. Consulta el archivo [`LICENSE`](LICENSE) en este repositorio para más información.

@@ -4,9 +4,11 @@
 #include <string>
 #include <iomanip>
 #include <Eigen/Dense>
+#include <chrono>
 
 using namespace std;
 using namespace Eigen;
+using namespace chrono;
 
 void printFormatted(double value) {
     stringstream stream;
@@ -58,8 +60,14 @@ MatrixXd convertToEigen(const vector<vector<double>>& tempMatriz) {
 }
 
 int main() {
+    auto start = high_resolution_clock::now();
+
     cout << "Ingrese la primera matriz (formato '1 2 3; 4 5 6; 7 8 9'): ";
     auto matriz1 = convertToEigen(readMatrix());
+
+    auto end = high_resolution_clock::now();
+    auto duration = duration_cast<microseconds>(end - start);
+    cout << "Tiempo de lectura y conversión de la primera matriz: " << duration.count() << " microseconds.\n";
 
     cout << "La primera matriz ingresada es:\n";
     for (int i = 0; i < matriz1.rows(); i++) {
@@ -73,15 +81,25 @@ int main() {
     string productCheck;
     cin >> productCheck;
 
+    MatrixXd matriz2;
     if (productCheck == "y" || productCheck == "yes") {
         cout << "Ingrese la segunda matriz (formato '1 2 3; 4 5 6; 7 8 9'): ";
         cin.ignore(); // Ignore the newline character left in the input buffer
-        auto matriz2 = convertToEigen(readMatrix());
+        start = high_resolution_clock::now();
+        matriz2 = convertToEigen(readMatrix());
+        end = high_resolution_clock::now();
+        duration = duration_cast<microseconds>(end - start);
+        cout << "Tiempo de lectura y conversión de la segunda matriz: " << duration.count() << " microseconds.\n";
 
         if (matriz1.cols() != matriz2.rows()) {
             cout << "Error: las dimensiones de las matrices no permiten el producto." << endl;
         } else {
+            start = high_resolution_clock::now();
             MatrixXd producto = matriz1 * matriz2;
+            end = high_resolution_clock::now();
+            duration = duration_cast<microseconds>(end - start);
+            cout << "Tiempo de cálculo del producto de las matrices: " << duration.count() << " microseconds.\n";
+
             cout << "El producto de las matrices es:\n";
             for (int i = 0; i < producto.rows(); i++) {
                 for (int j = 0; j < producto.cols(); j++) {
@@ -97,8 +115,13 @@ int main() {
     cin >> inverseCheck;
 
     if (inverseCheck == "y" || inverseCheck == "yes") {
+        start = high_resolution_clock::now();
         if (matriz1.determinant() != 0) {
             MatrixXd inversa = matriz1.inverse();
+            end = high_resolution_clock::now();
+            duration = duration_cast<microseconds>(end - start);
+            cout << "Tiempo de cálculo de la inversa de la matriz: " << duration.count() << " microseconds.\n";
+
             cout << "La inversa de la primera matriz es:\n";
             for (int i = 0; i < inversa.rows(); i++) {
                 for (int j = 0; j < inversa.cols(); j++) {

@@ -246,4 +246,4 @@ La matriz no es invertible (determinante es cero).
 ---
 ### 🗳️ | Licencia
 
-Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` en este repositorio para más información.
+Este proyecto está bajo la Licencia MIT. Consulta el archivo [`LICENSE`](LICENSE) en este repositorio para más información.

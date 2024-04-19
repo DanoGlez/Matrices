@@ -22,8 +22,8 @@ void printFormatted(double value)
     {
         exponent = "+" + exponent;
     }
-    if (exponent.length() == 4)
-    {                            // e.g., e+08
+    if (exponent.length() == 4) // e.g., e+08
+    {
         exponent.insert(2, "0"); // Adjust to e+008
     }
 
@@ -38,7 +38,7 @@ int main()
 
     stringstream ss(input);
     string row;
-    vector<vector<double>> tempMatriz;
+    vector<vector<double>> tempMatrix;
 
     while (getline(ss, row, ';'))
     {
@@ -49,53 +49,78 @@ int main()
         {
             currentRow.push_back(value);
         }
-        tempMatriz.push_back(currentRow);
+        tempMatrix.push_back(currentRow);
     }
 
-    int filas = tempMatriz.size();
-    int columnas = tempMatriz[0].size();
-    MatrixXd matriz(filas, columnas);
-    for (int i = 0; i < filas; i++)
+    if (tempMatrix.empty() || tempMatrix.size() != tempMatrix[0].size())
     {
-        for (int j = 0; j < columnas; j++)
+        cout << "La matriz debe ser cuadrada y no vacía.\n";
+        return 1;
+    }
+
+    int rows = tempMatrix.size();
+    int columns = tempMatrix[0].size();
+    MatrixXd matrix(rows, columns);
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < columns; j++)
         {
-            matriz(i, j) = tempMatriz[i][j];
+            matrix(i, j) = tempMatrix[i][j];
         }
     }
 
     cout << "La matriz ingresada es:\n";
-    for (int i = 0; i < matriz.rows(); i++)
+    for (int i = 0; i < matrix.rows(); i++)
     {
-        for (int j = 0; j < matriz.cols(); j++)
+        for (int j = 0; j < matrix.cols(); j++)
         {
-            printFormatted(matriz(i, j));
+            printFormatted(matrix(i, j));
         }
         cout << endl;
     }
 
-    cout << endl
-         << "¿Desea mostrar la inversa de la matriz? (y/n): ";
     string check;
+    cout << "¿Desea calcular la inversa de la matriz? (y/n): ";
     cin >> check;
 
     if (check == "y" || check == "yes")
     {
-        if (matriz.determinant() != 0)
+        if (matrix.determinant() != 0)
         {
-            MatrixXd inversa = matriz.inverse();
+            MatrixXd inverse = matrix.inverse();
             cout << "La inversa de la matriz es:\n";
-            for (int i = 0; i < inversa.rows(); i++)
+            for (int i = 0; i < inverse.rows(); i++)
             {
-                for (int j = 0; j < inversa.cols(); j++)
+                for (int j = 0; j < inverse.cols(); j++)
                 {
-                    printFormatted(inversa(i, j));
+                    printFormatted(inverse(i, j));
                 }
                 cout << endl;
+            }
+
+            cout << "¿Desea calcular el producto de la matriz con su inversa? (y/n): ";
+            cin >> check;
+            if (check == "y" || check == "yes")
+            {
+                MatrixXd product = matrix * inverse;
+                cout << "El producto de la matriz por su inversa es:\n";
+                for (int i = 0; i < product.rows(); i++)
+                {
+                    for (int j = 0; j < product.cols(); j++)
+                    {
+                        printFormatted(product(i, j));
+                    }
+                    cout << endl;
+                }
+            }
+            else
+            {
+                cout << "Operación cancelada por el usuario.\n";
             }
         }
         else
         {
-            cout << "La matriz no es invertible (determinante es cero)." << endl;
+            cout << "La matriz no es invertible (determinante es cero).\n";
         }
     }
     else if (check == "n" || check == "no")

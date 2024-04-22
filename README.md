@@ -310,6 +310,60 @@ Esto indica que el cálculo de la inversa de matrices \( 3 \times 3 \) tomó apr
 
 ---
 
+### 📁 | Carpeta Estadística Producto
+
+Este programa en C++ evalúa el tiempo necesario para realizar multiplicaciones de matrices aleatorias de tamaño \( A \times B \) y \( B \times C \). Utiliza la biblioteca Eigen para las operaciones de matriz y mide el tiempo de ejecución utilizando la librería `chrono`.
+
+### Características
+
+- **Eficiencia en el Tiempo:** Mide el tiempo requerido para realizar un gran número de multiplicaciones de matrices de diferentes tamaños.
+- **Operaciones Masivas:** Puede procesar un gran número de multiplicaciones de matrices para evaluar el rendimiento en un escenario de uso intensivo.
+
+### Requisitos
+
+Para compilar y ejecutar este programa, necesitarás:
+
+- Un compilador de C++ que soporte C++11 o superior (como g++).
+- Acceso a una terminal o línea de comandos.
+- La biblioteca Eigen para operaciones de matrices.
+
+### Compilación
+
+Para compilar el programa, puedes usar el siguiente comando en tu terminal:
+
+```bash
+g++ -o estadistica_producto estadistica_producto.cpp -I /path/to/eigen
+```
+
+Este comando compilará `estadistica_producto.cpp` y generará un ejecutable llamado `estadistica_producto`. Asegúrate de reemplazar `/path/to/eigen` con la ruta real donde está instalada la biblioteca Eigen en tu sistema.
+
+### Ejecución
+
+Para ejecutar el programa, simplemente escribe el siguiente comando en la terminal:
+
+```bash
+./estadistica_producto
+```
+
+Después de ejecutar el comando, se te pedirá que ingreses las dimensiones de las matrices \( A \), \( B \) y \( C \) (para matrices \( A \times B \) y \( B \times C \)). El programa ejecutará las multiplicaciones de matrices con esas dimensiones y mostrará el tiempo de ejecución.
+
+### Salida Esperada
+
+La salida del programa mostrará el tiempo necesario para realizar un gran número de multiplicaciones de matrices con las dimensiones especificadas, así como una salida dummy para asegurar que los resultados no sean optimizados por el compilador.
+
+```
+Enter rows of matrix A: 3
+Enter columns of matrix A (also rows of matrix B): 4
+Enter columns of matrix B: 2
+Time for 1000000 matrix multiplications (3x4 * 4x2): 123456 microseconds
+Dummy output: -0.12345
+Press Enter to exit...
+```
+
+Esto indica que el cálculo de la multiplicación de matrices \( 3 \times 4 \) y \( 4 \times 2 \) tomó aproximadamente 123456 microsegundos, y muestra una salida dummy para evitar la optimización del compilador.
+
+---
+
 ### 🗳️ | Licencia
 
 Este proyecto está bajo la Licencia MIT. Consulta el archivo [`LICENSE`](LICENSE) en este repositorio para más información.

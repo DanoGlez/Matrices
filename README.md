@@ -257,88 +257,56 @@ La matriz no es invertible (determinante es cero).
 
 ---
 
-### 📁 | Carpeta Estadísticas
+### 📁 | Carpeta Estadística Inversa
 
-Este programa en C++ está diseñado para evaluar el rendimiento de operaciones matemáticas como el producto de matrices y la inversa de matrices. Permite al usuario especificar cuántas operaciones realizar y si desea calcular el producto, la inversa, o ambos, usando matrices generadas aleatoriamente.
+Este programa en C++ evalúa el tiempo necesario para calcular la inversa de matrices cuadradas aleatorias de tamaño \( N \times N \). Utiliza la biblioteca Eigen para realizar las operaciones de inversión y mide el tiempo de ejecución utilizando la librería `chrono`.
 
 ### Características
 
-- **Generación Automática de Matrices:** Crea matrices aleatorias para las operaciones especificadas, asegurando una amplia variabilidad en los casos de prueba.
-- **Operaciones Diversificadas:** Permite al usuario optar por calcular el producto, la inversa, o ambos para las matrices generadas.
-- **Reporte Detallado:** Proporciona información detallada sobre cada matriz y resultado, incluyendo tiempos de ejecución para cada operación individual y un resumen del tiempo total.
+- **Eficiencia en el Tiempo:** Mide el tiempo requerido para calcular la inversa de matrices de diferentes tamaños.
+- **Operaciones Masivas:** Puede procesar un gran número de matrices para evaluar el rendimiento en un escenario de uso intensivo.
 
 ### Requisitos
 
 Para compilar y ejecutar este programa, necesitarás:
 
-- **Compilador C++:** Un compilador que soporte C++11 o superior (como g++).
-- **Biblioteca Eigen:** Utilizada para operaciones de matrices. Asegúrate de tenerla instalada y correctamente configurada en tu entorno de desarrollo.
-- **Librería `<chrono>`:** Para medición de tiempos de ejecución.
-- **Librería `<random>`:** Para la generación de matrices aleatorias.
+- Un compilador de C++ que soporte C++11 o superior (como g++).
+- Acceso a una terminal o línea de comandos.
+- La biblioteca Eigen para operaciones de matrices.
 
 ### Compilación
 
-El programa debe compilarse con acceso a la biblioteca Eigen. Aquí te dejo el comando típico de compilación que puedes usar en una terminal:
+Para compilar el programa, puedes usar el siguiente comando en tu terminal:
 
 ```bash
-g++ -o matriz_estadisticas main.cpp -I /path/to/eigen
+g++ -o estadistica_inversa estadistica_inversa.cpp -I /path/to/eigen
 ```
 
-Reemplaza `/path/to/eigen` con la ruta actual al directorio que contiene los headers de Eigen en tu sistema.
+Este comando compilará `estadistica_inversa.cpp` y generará un ejecutable llamado `estadistica_inversa`. Asegúrate de reemplazar `/path/to/eigen` con la ruta real donde está instalada la biblioteca Eigen en tu sistema.
 
 ### Ejecución
 
-Para ejecutar el programa, utiliza el siguiente comando en la terminal:
+Para ejecutar el programa, simplemente escribe el siguiente comando en la terminal:
 
 ```bash
-./matriz_estadisticas
+./estadistica_inversa
 ```
 
-Este comando inicia el programa, que luego te pedirá que ingreses los datos necesarios para proceder con las operaciones matemáticas.
+Después de ejecutar el comando, se te pedirá que ingreses el tamaño de la matriz (N para matrices \( N \times N \)). El programa ejecutará el cálculo de inversión para matrices de ese tamaño y mostrará el tiempo de ejecución.
 
-### Cómo Usar el Programa
+### Salida Esperada
 
-1. **Número de Operaciones:**
-   - Ingresa el número total de operaciones que deseas realizar.
+La salida del programa mostrará el tiempo necesario para calcular la inversa de un gran número de matrices de tamaño \( N \times N \), así como una salida dummy para asegurar que los resultados no sean optimizados por el compilador.
 
-2. **Tipo de Operación:**
-   - Especifica el tipo de operación: `producto`, `inversa`, o `ambas`.
-
-### Ejemplo de Entrada
-
-```plaintext
-Ingrese cuántas operaciones desea realizar: 10
-¿Desea calcular 'producto', 'inversa' o 'ambas'? ambas
+```
+Enter the size of the matrix (N for NxN): 3
+Testing size 3 with 1000000 matrices.
+Time for 1000000 3x3 matrix inversions: 123456 microseconds
+Dummy output: -0.12345
+Press Enter to exit...
 ```
 
-### Ejemplo de Salida
-
-La salida incluirá las matrices utilizadas, sus productos o inversas, y los tiempos de cálculo:
-
-```plaintext
-Matriz A (1):
-[1.23456789012345e+000, 2.34567890123456e+000, 3.45678901234567e+000;
- 4.56789012345678e+000, 5.67890123456789e+000, 6.78901234567890e+000;
- 7.89012345678901e+000, 8.90123456789012e+000, 9.01234567890123e+000]
-
-Producto (1):
-[3.00000000000000e+001, 2.40000000000000e+001, 1.80000000000000e+001;
- 8.40000000000000e+001, 6.90000000000000e+001, 5.40000000000000e+001;
- 1.38000000000000e+002, 1.14000000000000e+002, 9.00000000000000e+001]
-
-Tiempo para el producto: 123456 microsegundos.
-
-Inversa (1):
-[-3.00000000000000e+001, 6.00000000000000e+001, -3.00000000000000e+001;
- 6.00000000000000e+001, -1.20000000000000e+002, 6.00000000000000e+001;
- -3.00000000000000e+001, 6.00000000000000e
-
-+001, -3.00000000000000e+001]
-
-Tiempo para la inversa: 654321 microsegundos.
-
-Tiempo total para 10 operaciones de 'ambas': 20 segundos.
-```
+Esto indica que el cálculo de la inversa de matrices \( 3 \times 3 \) tomó aproximadamente 123456 microsegundos, y muestra una salida dummy para evitar la optimización del compilador.
 
 ---
 

@@ -259,7 +259,7 @@ La matriz no es invertible (determinante es cero).
 
 ### 📁 | Carpeta Estadística Inversa
 
-Este programa en C++ evalúa el tiempo necesario para calcular la inversa de matrices cuadradas aleatorias de tamaño \( N \times N \). Utiliza la biblioteca Eigen para realizar las operaciones de inversión y mide el tiempo de ejecución utilizando la librería `chrono`.
+Este programa en C++ evalúa el tiempo necesario para calcular la inversa de matrices cuadradas aleatorias de tamaño \( N x N \). Utiliza la biblioteca Eigen para realizar las operaciones de inversión y mide el tiempo de ejecución utilizando la librería `chrono`.
 
 ### Características
 
@@ -292,11 +292,11 @@ Para ejecutar el programa, simplemente escribe el siguiente comando en la termin
 ./estadistica_inversa
 ```
 
-Después de ejecutar el comando, se te pedirá que ingreses el tamaño de la matriz (N para matrices \( N \times N \)). El programa ejecutará el cálculo de inversión para matrices de ese tamaño y mostrará el tiempo de ejecución.
+Después de ejecutar el comando, se te pedirá que ingreses el tamaño de la matriz (N para matrices \( N x N \)). El programa ejecutará el cálculo de inversión para matrices de ese tamaño y mostrará el tiempo de ejecución.
 
 ### Salida Esperada
 
-La salida del programa mostrará el tiempo necesario para calcular la inversa de un gran número de matrices de tamaño \( N \times N \), así como una salida dummy para asegurar que los resultados no sean optimizados por el compilador.
+La salida del programa mostrará el tiempo necesario para calcular la inversa de un gran número de matrices de tamaño \( N x N \), así como una salida dummy para asegurar que los resultados no sean optimizados por el compilador.
 
 ```
 Enter the size of the matrix (N for NxN): 3
@@ -306,13 +306,13 @@ Dummy output: -0.12345
 Press Enter to exit...
 ```
 
-Esto indica que el cálculo de la inversa de matrices \( 3 \times 3 \) tomó aproximadamente 123456 microsegundos, y muestra una salida dummy para evitar la optimización del compilador.
+Esto indica que el cálculo de la inversa de matrices \( 3 x 3 \) tomó aproximadamente 123456 microsegundos, y muestra una salida dummy para evitar la optimización del compilador.
 
 ---
 
 ### 📁 | Carpeta Estadística Producto
 
-Este programa en C++ evalúa el tiempo necesario para realizar multiplicaciones de matrices aleatorias de tamaño \( A \times B \) y \( B \times C \). Utiliza la biblioteca Eigen para las operaciones de matriz y mide el tiempo de ejecución utilizando la librería `chrono`.
+Este programa en C++ evalúa el tiempo necesario para realizar multiplicaciones de matrices aleatorias de tamaño \( A x B \) y \( B x C \). Utiliza la biblioteca Eigen para las operaciones de matriz y mide el tiempo de ejecución utilizando la librería `chrono`.
 
 ### Características
 
@@ -345,7 +345,7 @@ Para ejecutar el programa, simplemente escribe el siguiente comando en la termin
 ./estadistica_producto
 ```
 
-Después de ejecutar el comando, se te pedirá que ingreses las dimensiones de las matrices \( A \), \( B \) y \( C \) (para matrices \( A \times B \) y \( B \times C \)). El programa ejecutará las multiplicaciones de matrices con esas dimensiones y mostrará el tiempo de ejecución.
+Después de ejecutar el comando, se te pedirá que ingreses las dimensiones de las matrices \( A \), \( B \) y \( C \) (para matrices \( A x B \) y \( B x C \)). El programa ejecutará las multiplicaciones de matrices con esas dimensiones y mostrará el tiempo de ejecución.
 
 ### Salida Esperada
 
@@ -360,7 +360,7 @@ Dummy output: -0.12345
 Press Enter to exit...
 ```
 
-Esto indica que el cálculo de la multiplicación de matrices \( 3 \times 4 \) y \( 4 \times 2 \) tomó aproximadamente 123456 microsegundos, y muestra una salida dummy para evitar la optimización del compilador.
+Esto indica que el cálculo de la multiplicación de matrices \( 3 x 4 \) y \( 4 x 2 \) tomó aproximadamente 123456 microsegundos, y muestra una salida dummy para evitar la optimización del compilador.
 
 ---
 

@@ -279,10 +279,10 @@ Para compilar y ejecutar este programa, necesitarás:
 Para compilar el programa, puedes usar el siguiente comando en tu terminal:
 
 ```bash
-g++ -o estadistica_inversa estadistica_inversa.cpp -I /path/to/eigen
+g++ -o estadistica_inversa main.cpp -I /path/to/eigen
 ```
 
-Este comando compilará `estadistica_inversa.cpp` y generará un ejecutable llamado `estadistica_inversa`. Asegúrate de reemplazar `/path/to/eigen` con la ruta real donde está instalada la biblioteca Eigen en tu sistema.
+Este comando compilará `main.cpp` y generará un ejecutable llamado `estadistica_inversa`. Asegúrate de reemplazar `/path/to/eigen` con la ruta real donde está instalada la biblioteca Eigen en tu sistema.
 
 ### Ejecución
 
@@ -332,10 +332,10 @@ Para compilar y ejecutar este programa, necesitarás:
 Para compilar el programa, puedes usar el siguiente comando en tu terminal:
 
 ```bash
-g++ -o estadistica_producto estadistica_producto.cpp -I /path/to/eigen
+g++ -o estadistica_producto main.cpp -I /path/to/eigen
 ```
 
-Este comando compilará `estadistica_producto.cpp` y generará un ejecutable llamado `estadistica_producto`. Asegúrate de reemplazar `/path/to/eigen` con la ruta real donde está instalada la biblioteca Eigen en tu sistema.
+Este comando compilará `main.cpp` y generará un ejecutable llamado `estadistica_producto`. Asegúrate de reemplazar `/path/to/eigen` con la ruta real donde está instalada la biblioteca Eigen en tu sistema.
 
 ### Ejecución
 

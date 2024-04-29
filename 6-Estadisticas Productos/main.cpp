@@ -8,50 +8,42 @@ using namespace chrono;
 
 void testMatrixMultiplication(size_t operationsCount, int rowsA, int colsA, int colsB)
 {
-    MatrixXd matA = MatrixXd::Random(rowsA, colsA); // Inicializa una vez fuera del bucle
-    MatrixXd matB = MatrixXd::Random(colsA, colsB); // Inicializa una vez fuera del bucle
-    MatrixXd result(rowsA, colsB);                 // Preallocate the result matrix
+    MatrixXd matA = MatrixXd::Random(rowsA, colsA);
+    MatrixXd matB = MatrixXd::Random(colsA, colsB);
+    MatrixXd result(rowsA, colsB);
     double dummy = 0.0;
 
     auto start = high_resolution_clock::now();
 
     for (size_t i = 0; i < operationsCount; ++i)
     {
-        result.noalias() = matA * matB;            // Use noalias to assert no aliasing issues
-        dummy += result.sum();                     // Sum to prevent optimization away
+        result.noalias() = matA * matB;
+        dummy += result.sum();
     }
 
     auto end = high_resolution_clock::now();
-    auto duration = duration_cast<microseconds>(end - start).count();
+    auto duration = duration_cast<nanoseconds>(end - start).count();
 
-    cout << "Time for " << operationsCount << " matrix multiplications (" << rowsA << "x" << colsA << " * " << colsA << "x" << colsB << "): " << duration << " microseconds\n";
-    cout << "Dummy output: " << dummy << endl; // To ensure 'dummy' is used
+    cout << "Time for " << operationsCount << " matrix multiplications (" << rowsA << "x" << colsA << " * " << colsA << "x" << colsB << "): " << duration << " nanoseconds\n";
+    cout << "Dummy output: " << dummy << endl;
 }
 
 int main()
 {
     int rowsA, colsA, colsB;
-    size_t totalMatrices = 1000000; // Total number of multiplications to process
+    size_t totalMatrices = 1000000;
 
     cout << "Enter rows of matrix A: ";
     cin >> rowsA;
     cout << "Enter columns of matrix A (also rows of matrix B): ";
     cin >> colsA;
-    cout << "Enter columns of matrix B: ";  
+    cout << "Enter columns of matrix B: ";
     cin >> colsB;
 
-    try
-    {
-        testMatrixMultiplication(totalMatrices, rowsA, colsA, colsB);
-    }
-    catch (const std::exception &e)
-    {
-        cerr << "Exception: " << e.what() << '\n';
-        return 1;
-    }
+    testMatrixMultiplication(totalMatrices, rowsA, colsA, colsB);
 
     cout << "Press Enter to exit...";
-    cin.ignore(); // Clears the newline character left in the input buffer
+    cin.ignore();
     cin.get();
     return 0;
 }
